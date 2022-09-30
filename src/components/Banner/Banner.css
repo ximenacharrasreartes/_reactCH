@@ -1,0 +1,17 @@
+
+
+.Banner {
+    
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 100%;
+    width: 100%;
+    margin: 10px 0;
+    align-items: top;
+    align-items: center;
+    vertical-align: middle;
+    height: 500px;
+    background: url("https://unicorn.lush.com/media/file_upload/220916_onepiece_web2_RGB_972cc8fc.jpg") center;
+    vertical-align: middle;
+    
+;}
