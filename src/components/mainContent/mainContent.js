@@ -4,27 +4,51 @@ import { Link, useParams } from "react-router-dom";
 import {getProductById, getProductsByCategory, getProducts} from '../data/product_data';
 import {useEffect, useState} from 'react';
 import { Container, Row, Col, InputGroup,  FormControl } from 'react-bootstrap';
+import {getDocs, collection, getDoc, query, where } from 'firebase/firestore';
+import { db } from '../../services/firebase';
+
 
 function MainContent() {
     const [product_card, setProducts] = useState([])
     const {testid} = useParams()
    
     const categoryId = parseInt(testid)
-    useEffect(() => { //Define una operación que va a ejecutarse en cada recarga
-        
-       console.log("test", categoryId)
-       console.log("num", testid)
-        const asyncFunction = categoryId ? getProductsByCategory : getProducts //Si hay ID ejecuto el primero, sino traigo todo el resto
-       
-        asyncFunction(categoryId).then(response => {
-            setProducts(response) //Cargo los productos en la variable
+    useEffect(() => { 
+        const collectionRef = categoryId
+        ? query(collection(db, 'product_card'), where('category_id', '==', categoryId))
+        : collection(db, 'product_card')
+
+        getDocs(collectionRef).then( response => {
             console.log(response)
+            const productsAdapted = response.docs.map(doc => {
+                const data = doc.data()
+                console.log("a",data)
+
+                return { id: doc.id, ...data}
+            })
+            console.log(productsAdapted)
+            setProducts(productsAdapted)
         }).catch(error => {
             console.log(error)
         }).finally(() => {
            
         })  
     }, [categoryId])
+ console.log("estoy en la cat",categoryId)
+
+      /* console.log("test", categoryId)
+       console.log("num", testid)
+        const asyncFunction = categoryId ? getProductsByCategory : getProducts 
+       
+        asyncFunction(categoryId).then(response => {
+            setProducts(response) 
+            console.log(response)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() => {
+           
+        })  
+    }, [categoryId])*/
 
 
 

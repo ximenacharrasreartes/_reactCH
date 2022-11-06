@@ -4,7 +4,8 @@ import { Container, Row, Col, InputGroup,  FormControl } from 'react-bootstrap';
 import {BiSearch} from 'react-icons/bi';
 import {getProductById, getProductsByCategory, getProducts} from '../data/product_data';
 import SearchFilter from 'react-filter-search';
-
+import {getDocs, collection, getDoc } from 'firebase/firestore';
+import { db } from '../../services/firebase';
 
 
 ///Buscador 
@@ -46,16 +47,7 @@ const ItemList = ({greeting}) => {
 
                 </Col>
 
-              <SearchFilter
-              value={searchInput}
-              data={productData}
-              renderResults={results =>(
-                <Row className='justify-content-center'>
-                    {results.map((item, i)=>(
-                        <h1> {item.title} </h1>
-                    ))}  </Row>
-              )}
-              />
+             
 
               
                 {searchInput}

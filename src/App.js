@@ -15,11 +15,11 @@ function App ( ){
   return(
   
     <React.Fragment>
-        <main className={theme? 'bg-black': 'bg-light-2'} style= {{ height: '100vh', overflowY: 'auto'}} > <Navbar/></main>
+        <main className={theme? 'bg-black': 'bg-light-2'}  > <Navbar/></main>
       <BrowserRouter><Navbar/>
       <Banner />
       <ItemList greeting={'Nuevos Productos!'} />
-      <ItemList greeting={'Hola!'} />
+      
 
       <Routes>
       
