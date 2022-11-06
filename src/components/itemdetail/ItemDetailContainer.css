@@ -131,3 +131,12 @@
     padding-right: 8px;
     
   }
+  .card_img_pdp {
+    position:relative;
+    right: -212px;
+   size: 28px;
+   box-sizing: border-box;
+   image-rendering: ;
+  }
+  
+  

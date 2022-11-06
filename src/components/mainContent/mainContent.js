@@ -3,7 +3,7 @@ import './mainContent.css';
 import { Link, useParams } from "react-router-dom";
 import {getProductById, getProductsByCategory, getProducts} from '../data/product_data';
 import {useEffect, useState} from 'react';
-
+import { Container, Row, Col, InputGroup,  FormControl } from 'react-bootstrap';
 
 function MainContent() {
     const [product_card, setProducts] = useState([])

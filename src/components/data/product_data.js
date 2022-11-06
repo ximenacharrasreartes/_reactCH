@@ -6,7 +6,8 @@ const product_card = [
         description: "Brillá con las refrescantes notas de lemongrass y bergamota en este Halloween.",
         price: 1500,
         currency: "$",
-        thumb: "./images/ghostie_soap.png"
+        thumb: "./images/ghostie_soap.png",
+        stock: 5000
 
     },
     {
@@ -16,7 +17,8 @@ const product_card = [
         description: "Alegrá tu día y tu piel con este jabón lleno de limón.",
         price: 1100,
         currency: "$",
-        thumb: "./images/bohemian_soap.png"
+        thumb: "./images/bohemian_soap.png",
+        stock: 5000
 
     },
     {
@@ -26,7 +28,8 @@ const product_card = [
         description: "Este lujoso jabón está lleno de cálidas especias afrut",
         price: 1900,
         currency: "$",
-        thumb: "./images/golden_pear_soap.png"
+        thumb: "./images/golden_pear_soap.png",
+        stock: 5000
 
     },
     {
@@ -36,7 +39,8 @@ const product_card = [
         description: "Este osito está lleno de leche de avena para una limpieza suave y cremosa. El aroma de vainilla y almendra reconforta y nutre la piel de forma delicada.",
         price: 1800,
         currency: "$",
-        thumb: "./images/polar_bear_soap.png"
+        thumb: "./images/polar_bear_soap.png",
+        stock: 5000
 
     },
     {
@@ -46,7 +50,8 @@ const product_card = [
         description: "Su refrescante aroma a limón y pomelo te ayuda a alejar los días grises.",
         price: 1100,
         currency: "$",
-        thumb: "./images/baked_alaska_soap.png"
+        thumb: "./images/baked_alaska_soap.png",
+        stock: 5000
 
     },
     {
@@ -56,7 +61,8 @@ const product_card = [
         description: "Tu fantasma de confianza.",
         price: 1300,
         currency: "$",
-        thumb: "./images/screamo.png"
+        thumb: "./images/screamo.png",
+        stock: 5000
 
     },
     {
@@ -66,7 +72,8 @@ const product_card = [
         description: "Aroma a Snow Fairy.",
         price: 1900,
         currency: "$",
-        thumb: "./images/snow_fairy.png"
+        thumb: "./images/snow_fairy.png",
+        stock: 5000
 
     },
     {
@@ -76,7 +83,8 @@ const product_card = [
         description: "Un trío (nada) aterrador.",
         price: 1100,
         currency: "$",
-        thumb: "./images/box1.png"
+        thumb: "./images/box1.png",
+        stock: 5000
 
     }
 ]

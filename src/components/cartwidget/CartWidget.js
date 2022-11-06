@@ -4,6 +4,7 @@ import './CartWidget.css';
 
 const CartWidget = () => {
   //la lógica va siempre antes del return
+
   return (
     <div className="cart-widget">
       <FaShoppingCart icon={FaShoppingCart} size="20px" color="white" />
