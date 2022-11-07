@@ -14,6 +14,7 @@ import { Button } from "react-bootstrap";
 function MainContent() {
     const [product_card, setProducts] = useState([])
     const {testid} = useParams()
+    const { addItem } = useCart();
 
     
    
