@@ -1,6 +1,7 @@
 import './ItemList.css' ;
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, InputGroup,  FormControl } from 'react-bootstrap';
+
 import {BiSearch} from 'react-icons/bi';
 import {getProductById, getProductsByCategory, getProducts} from '../data/product_data';
 import SearchFilter from 'react-filter-search';

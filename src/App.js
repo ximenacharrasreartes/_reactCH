@@ -9,6 +9,7 @@ import ItemDetail from "./components/itemsdetail/itemsdetail";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useThemeHook} from './components/ThemeProvider'
 import Cart from "./components/cart/Cart";
+import { Router } from "@reach/router";
 
 function App ( ){
   const [theme] = useThemeHook();
@@ -27,6 +28,10 @@ function App ( ){
       <Route path='/category/:testid' element={ <MainContent/>}/>
       
       <Route path='/detail/:productId' element={ <ItemDetail/>}/>
+      
+      <Route path='/cart' element={ <Cart/>}/>
+      
+      
       
      
       </Routes>

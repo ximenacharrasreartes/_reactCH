@@ -6,11 +6,16 @@ import {useEffect, useState} from 'react';
 import { Container, Row, Col, InputGroup,  FormControl } from 'react-bootstrap';
 import {getDocs, collection, getDoc, query, where } from 'firebase/firestore';
 import { db } from '../../services/firebase';
+import { useCart } from "react-use-cart";
+import { Button } from "react-bootstrap";
+
 
 
 function MainContent() {
     const [product_card, setProducts] = useState([])
     const {testid} = useParams()
+
+    
    
     const categoryId = parseInt(testid)
     useEffect(() => { 
@@ -70,6 +75,8 @@ function MainContent() {
                         <div class="button"><a className="price"> {item.price} <span> {item.currency} </span> </a>
                             <a class="cart-btn" href="#"><i class="cart-icon ion-bag"></i> Agregar a Mi Carrito</a> </div>
                         <Link  to={`/detail/${item.id}`} class="bg animated fadeInDown"> Detalle </Link>
+                        
+
                     </div>
                 </div>
             </div>
