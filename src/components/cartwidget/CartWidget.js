@@ -1,7 +1,6 @@
 import React from 'react';
 import {FaBars, FaTimes, FaShoppingCart} from "react-icons/fa";
 import './CartWidget.css';
-import { Cart } from '../../Context/Cart';
 import { useContext } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -9,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 const CartWidget = () => {
-  const {totalQuantity} = useContext(Cart)
+  const {totalQuantity} = useContext()
     const navigate = useNavigate()
 
   return (

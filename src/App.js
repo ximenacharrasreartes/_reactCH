@@ -9,14 +9,13 @@ import ItemDetail from "./components/itemsdetail/itemsdetail";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useThemeHook} from './components/ThemeProvider'
 import Cart from "./components/cart/Cart";
-import { Router } from "@reach/router";
 
 function App ( ){
   const [theme] = useThemeHook();
   return(
   
     <React.Fragment>
-        <main className={theme? 'bg-black': 'bg-light-2'}  > <Navbar/></main>
+        <main className={theme? 'bg-black': 'bg-light-2'}  > <Navbar/>
       <BrowserRouter><Navbar/>
       <Banner />
       <ItemList greeting={'Nuevos Productos!'} />
@@ -37,7 +36,9 @@ function App ( ){
       </Routes>
       
       </BrowserRouter>
+      </main>
     </React.Fragment>
+    
   );
 }
 

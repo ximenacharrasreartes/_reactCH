@@ -1,29 +1,28 @@
 import React, { useState } from "react";
 import './ItemDetailContainer.css';
 import { useParams } from "react-router-dom";
-import ItemCount from '../ItemCount/ItemCount';
-import { Cart } from '../../Context/Cart';
 import { useContext } from "react";
+import { Link } from  "@reach/router";
+import { BsCartPlus } from 'react-icons/bs';
+import { useCart } from 'react-use-cart';
+import { useThemeHook } from '../ThemeProvider';
+import { Button, Card} from 'react-bootstrap';
 
 
 
 
 
-const DetailContent = ({ id,thumb, product_name, category_id, stock, description, price, currency }) => {
-    const { addItemToCart, isInCart, getProductQuantity } = useContext(Cart)
 
-    const handleOnAdd = (quantity) => {
+const DetailContent = (props) => {
 
-        const productToAdd = {
-            id,
-            product_name,
-            price
-        }
+let { id, thumb, product_name, category_id, stock, description, price, currency } = props.data;
+    
+    const [theme] = useThemeHook();
+    const { addItem } = useCart();
 
-        addItemToCart(productToAdd, quantity)
+    const addToCart = () =>{
+        addItem(props.data);
     }
-
-    console.log(addItemToCart)
     
     return (
     <div className="wrapper">
@@ -42,7 +41,12 @@ const DetailContent = ({ id,thumb, product_name, category_id, stock, description
         <img src={thumb}></img>
         <p className="price" > {price} <span> {currency} </span> </p>
         <div class="button"><a className="price" > {price} <span> {currency} </span> </a> 
-        <ItemCount class="cart-btn" onClick={handleOnAdd} stock={stock}  href="#"><i class="cart-icon ion-bag"></i> Agregar a Mi Carrito</ItemCount> </div>
+        <Button
+                    onClick={()=> addToCart()}
+                    className={`${theme? 'bg-dark-primary text-black':'bg-light-primary' } d-flex align-item-center m-auto border-0`}
+                >
+                    <BsCartPlus size="1.8rem" />
+Agregar                </Button> </div>
         
         
       

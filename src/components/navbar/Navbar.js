@@ -57,7 +57,7 @@ function Navbar() {
                 className={`${darkMode? 'text-dark-primary': 'text-light-primary'}`}
                 >
                 <BiCart size="2rem"/>
-                {!isEmpty && <span style={{position: 'relative', left: '-21px', top: '-18px'}} > {totalItems} </span>}
+                {!isEmpty && <span style={{position: 'relative', left: '-21px', top: '-18px'}} >  </span>}
                 <span style={{ marginLeft: !isEmpty ? '-13px': 0  }}>Carrito </span>
                 </Nav.Link>
 
