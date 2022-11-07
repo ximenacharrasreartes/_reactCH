@@ -28,7 +28,7 @@ const { id, thumb, product_name, category_id, stock, description, price, currenc
     <div className="wrapper">
         <div className="outer">
         <div class="content animated fadeInLeft">
-        <span class="bg animated fadeInDown"> ¡Nuevo! </span>
+  
         <div className="card" key= {id}  > 
        <div className="card_img_pdp">
         <img src={thumb} alt="test"  width="400"
@@ -37,16 +37,13 @@ const { id, thumb, product_name, category_id, stock, description, price, currenc
     </div>
     <div className="card_header" >
         <h2> {product_name} </h2>
-        <p> {description} </p>
-        <img src={thumb}></img>
-        <p className="price" > {price} <span> {currency} </span> </p>
-        <div class="button"><a className="price" > {price} <span> {currency} </span> </a> 
-        <Button
-                    onClick={()=> addToCart()}
-                    className={`${theme? 'bg-dark-primary text-black':'bg-light-primary' } d-flex align-item-center m-auto border-0`}
-                >
-                    <BsCartPlus size="1.8rem" />
-Agregar                </Button> </div>
+        <p> {description} </p> <img src={thumb}></img>
+
+       
+                        <div class="button"><a className="price"> {price} <span> {currency} </span> </a>
+                            <a class="cart-btn"   onClick={()=> addToCart()} ><i class="cart-icon ion-bag"></i> Agregar a Mi Carrito</a> </div>
+                       
+
         
         
       

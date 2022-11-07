@@ -22,6 +22,8 @@ function MainContent() {
     const [theme] = useThemeHook();
 
 
+    
+
    
    
     const categoryId = parseInt(testid)
@@ -79,16 +81,9 @@ function MainContent() {
                         <h2> {item.product_name} </h2>
                         <p> {item.description} </p>
                         <p className="price"> {item.price} <span> {item.currency} </span> </p>
-                        <div class="button"><a className="price"> {item.price} <span> {item.currency} </span> </a>
-                            <a class="cart-btn" href="#"><i class="cart-icon ion-bag"></i> Agregar a Mi Carrito</a> </div>
+                       
                         <Link  to={`/detail/${item.id}`} class="bg animated fadeInDown"> Detalle </Link>
-                        <Button 
-                        onClick={()=>addItem(product_card)}
-                        className={theme? 'bg-dark-primary text-black' : 'bg-light-primary'}
-                        style={{borderRadius: '0', border: 0}}
-                    >
-                        <BsCartPlus size="1.8rem"/>
-Agregar                    </Button>
+                        
 
                     </div>
                 </div>
