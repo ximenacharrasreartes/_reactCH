@@ -1,9 +1,16 @@
 import React from 'react';
 import {FaBars, FaTimes, FaShoppingCart} from "react-icons/fa";
 import './CartWidget.css';
+import { Cart } from '../../Context/Cart';
+import { useContext } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+
+
+
 
 const CartWidget = () => {
-  //la lógica va siempre antes del return
+  const {totalQuantity} = useContext(Cart)
+    const navigate = useNavigate()
 
   return (
     <div className="cart-widget">

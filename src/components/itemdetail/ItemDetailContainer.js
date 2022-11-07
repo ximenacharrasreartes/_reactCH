@@ -1,23 +1,29 @@
-import React from "react";
-import {getProductById} from "../data/product_data";
+import React, { useState } from "react";
 import './ItemDetailContainer.css';
 import { useParams } from "react-router-dom";
-import { useCart } from "react-use-cart";
-import { BsCartPlus } from "react-icons/bs";
-import { Button } from "react-bootstrap";
-import Cart from "../cart/Cart";
-import itemCount from '../ItemCount/ItemCount';
+import ItemCount from '../ItemCount/ItemCount';
+import { Cart } from '../../Context/Cart';
+import { useContext } from "react";
+
+
 
 
 
 const DetailContent = ({ id,thumb, product_name, category_id, stock, description, price, currency }) => {
+    const { addItemToCart, isInCart, getProductQuantity } = useContext(Cart)
 
     const handleOnAdd = (quantity) => {
-    const productToAdd = {
-        id, product_name, price, quantity
+
+        const productToAdd = {
+            id,
+            product_name,
+            price
+        }
+
+        addItemToCart(productToAdd, quantity)
     }
-    console.log("agregar", productToAdd)
-}
+
+    console.log(addItemToCart)
     
     return (
     <div className="wrapper">
@@ -36,10 +42,11 @@ const DetailContent = ({ id,thumb, product_name, category_id, stock, description
         <img src={thumb}></img>
         <p className="price" > {price} <span> {currency} </span> </p>
         <div class="button"><a className="price" > {price} <span> {currency} </span> </a> 
-        <a onClick={()=> handleOnAdd() } class="cart-btn" href="#"><i class="cart-icon ion-bag"></i> Agregar a Mi Carrito</a> </div>
-        <itemCount stock= {stock} onConfirm={handleOnAdd}/>
-        <Button class="cart-btn cart-icon ion-bag"> Agregar al Carrito <BsCartPlus size="1.8rem" /> </Button>
+        <ItemCount class="cart-btn" onClick={handleOnAdd} stock={stock}  href="#"><i class="cart-icon ion-bag"></i> Agregar a Mi Carrito</ItemCount> </div>
         
+        
+      
+           
         </div>
         </div>
         </div>
@@ -48,11 +55,8 @@ const DetailContent = ({ id,thumb, product_name, category_id, stock, description
     </div>
     );
     
-    
-const params = useParams()
 
-console.log(params)
 
-}
+};
 
 export default DetailContent;
