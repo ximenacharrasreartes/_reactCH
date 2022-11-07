@@ -15,13 +15,13 @@ import { Button, Card} from 'react-bootstrap';
 
 const DetailContent = (props) => {
 
-let { id, thumb, product_name, category_id, stock, description, price, currency } = props.data;
+const { id, thumb, product_name, category_id, stock, description, price, currency } = props;
     
     const [theme] = useThemeHook();
     const { addItem } = useCart();
 
     const addToCart = () =>{
-        addItem(props.data);
+        addItem(props);
     }
     
     return (

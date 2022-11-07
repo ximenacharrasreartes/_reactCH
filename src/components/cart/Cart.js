@@ -3,9 +3,16 @@ import { Button, Container, Col, Row, Table} from 'react-bootstrap';
 import { useCart } from 'react-use-cart';
 import { useThemeHook } from '../ThemeProvider';
 import { BsCartCheck, BsCartX} from 'react-icons/bs';
+import { useEffect } from 'react';
 
 const Cart = () => {
     const [theme] = useThemeHook();
+    
+    useEffect(() => {
+
+        console.log("Hola!")
+     }, [])
+    
     const {
         isEmpty,
         items,
@@ -29,7 +36,7 @@ const Cart = () => {
                                         <div style={{ background: 'white', height: '8rem', overflow: 'hidden', display: 'flex',
                                         justifyContent: 'center', alignItems: 'center' }}>
                                             <div style={{ padding: '.5rem'}}>
-                                                <img src={item.image} style={{ width: '4rem'}} alt={item.title} />
+                                                <img src={item.thumb} style={{ width: '4rem'}} alt={item.title} />
                                             </div>
                                         </div>
                                     </td>
@@ -38,7 +45,7 @@ const Cart = () => {
                                             {item.title}
                                         </h6>
                                     </td>
-                                    <td>Rs. {item.price}</td>
+                                    <td>$ {item.price}</td>
                                     <td>Quantity ({item.quantity})</td>
                                     <td>
                                         <Button onClick={()=> updateItemQuantity(item.id, item.quantity - 1)} className="ms-2">-</Button>
@@ -70,7 +77,7 @@ const Cart = () => {
                                 className="m-2"
                             >
                                 <BsCartCheck size="1.7rem" />
-                                Vaciar Carrito
+                                Finalizar Compra
                             </Button>
                         </Col>
                     </Row>}

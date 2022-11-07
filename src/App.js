@@ -9,6 +9,8 @@ import ItemDetail from "./components/itemsdetail/itemsdetail";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useThemeHook} from './components/ThemeProvider'
 import Cart from "./components/cart/Cart";
+import Checkout from "./components/checkout/checkout";
+
 
 function App ( ){
   const [theme] = useThemeHook();
@@ -30,6 +32,7 @@ function App ( ){
       
       <Route path='/cart' element={ <Cart/>}/>
       
+      <Route path='/checkout' element={ <Checkout/>}/>
       
       
      

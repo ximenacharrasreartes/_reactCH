@@ -5,13 +5,15 @@ import React from 'react';
 import CartWidget from '../cartwidget/CartWidget';
 import {ThemeContext} from '../ThemeProvider';
 import { BiSun, BiMoon, BiCart } from 'react-icons/bi';
-import { Nav } from 'react-bootstrap';
+import { Button, Nav } from 'react-bootstrap';
 import {Link} from "@reach/router";
 import {useCart} from "react-use-cart";
+
 
 function Navbar() {
     const {theme, setThemeMode} = useContext(ThemeContext);
     const [darkMode, setDarkMode] = useState(theme);
+  
 
     useEffect(()=> {
         setThemeMode(darkMode);
@@ -56,9 +58,11 @@ function Navbar() {
                 <Nav.Link
                 className={`${darkMode? 'text-dark-primary': 'text-light-primary'}`}
                 >
-                <BiCart size="2rem"/>
-                {!isEmpty && <span style={{position: 'relative', left: '-21px', top: '-18px'}} >  </span>}
+                    <Link to='/cart' >
+                <BiCart to='/cart'size="2rem"/>
+                {!isEmpty && <span style={{position: 'relative', left: '-21px', top: '-18px'}} > {totalItems} </span>}
                 <span style={{ marginLeft: !isEmpty ? '-13px': 0  }}>Carrito </span>
+                </Link>
                 </Nav.Link>
 
                 <button className="nav-btn nav-close-btn" onClick={showNavbar}>
