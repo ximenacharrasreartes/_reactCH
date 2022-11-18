@@ -4,13 +4,15 @@ import { useCart } from 'react-use-cart';
 import { useThemeHook } from '../ThemeProvider';
 import { BsCartCheck, BsCartX} from 'react-icons/bs';
 import { useEffect } from 'react';
+import {Link} from "@reach/router";
+import Checkout from "../checkout/checkout";
 
 const Cart = () => {
     const [theme] = useThemeHook();
     
     useEffect(() => {
 
-        console.log("Hola!")
+     
      }, [])
     
     const {
@@ -76,7 +78,7 @@ const Cart = () => {
                             <Button variant="success"
                                 className="m-2"
                             >
-                                <BsCartCheck size="1.7rem" />
+                                <Link   to="/checkout"  size="1.7rem" />
                                 Finalizar Compra
                             </Button>
                         </Col>
